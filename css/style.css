@@ -108,6 +108,27 @@ main {
   margin-bottom: 0.8rem;
 }
 
+.why-choose-us {
+  padding: 2rem 0;
+}
+
+.why-item {
+  padding: 0.9rem 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.why-item:last-child {
+  border-bottom: 0;
+}
+
+.why-card {
+  background: linear-gradient(135deg, #f7fbff 0%, #eef6ff 100%);
+  border: 1px solid var(--color-border);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
 .brand-mark {
   align-items: center;
   background-color: var(--color-surface);
