@@ -1,13 +1,37 @@
 
 :root {
+  --color-primary: #0d6efd;
+  --color-primary-dark: #084298;
+  --color-accent: #0dcaf0;
+  --color-background: #f8f9fa;
+  --color-surface: #ffffff;
+  --color-text: #333333;
+  --color-text-muted: #6c757d;
+  --color-border: #dee2e6;
+  --color-footer: #212529;
+
   --primary-brand: #0d6efd;
-  --accent-brand: #0dcaf0;  
+  --accent-brand: #0dcaf0;
+
+  --font-family-base: 'Arial', sans-serif;
+
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 3rem;
+
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+
+  --shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  --focus-ring: 0 0 0 0.25rem rgba(13, 202, 240, 0.25);
 }
 
 body {
-  font-family: 'Arial', sans-serif;
-  background-color: #f8f9fa;
-  color: #333333;
+  font-family: var(--font-family-base);
+  background-color: var(--color-background);
+  color: var(--color-text);
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -18,6 +42,6 @@ main {
 }
 
 .form-control:focus {
-  border-color: var(--accent-brand);
-  box-shadow: 0 0 0 0.25rem rgba(13, 202, 240, 0.25);
+  border-color: var(--color-accent);
+  box-shadow: var(--focus-ring);
 }
