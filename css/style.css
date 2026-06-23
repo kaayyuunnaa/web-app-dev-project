@@ -54,6 +54,21 @@ main {
   width: 2rem;
 }
 
+.site-footer {
+  background-color: var(--color-footer);
+}
+
+.footer-link {
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+}
+
+.footer-link:hover,
+.footer-link:focus {
+  color: var(--color-surface);
+  text-decoration: underline;
+}
+
 .form-control:focus {
   border-color: var(--color-accent);
   box-shadow: var(--focus-ring);
