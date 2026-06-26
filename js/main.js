@@ -27,8 +27,21 @@ document.addEventListener('DOMContentLoaded', () => {
     input.insertAdjacentElement('afterend', feedback);
   });
 
+  const submitButton = form.querySelector('button[type="submit"]');
+  const successMessage = document.createElement('div');
+  successMessage.className = 'alert alert-success mt-3 d-none';
+  successMessage.id = 'formSuccessMessage';
+  successMessage.setAttribute('role', 'status');
+  successMessage.setAttribute('aria-live', 'polite');
+
+  if (submitButton) {
+    submitButton.insertAdjacentElement('beforebegin', successMessage);
+  }
+
   const setFieldState = (input, isValid, message) => {
+    const hasValue = input.value.trim().length > 0;
     input.classList.toggle('is-invalid', !isValid);
+    input.classList.toggle('is-valid', isValid && hasValue);
     input.setAttribute('aria-invalid', String(!isValid));
 
     const feedback = document.getElementById(`${input.id}-error`);
@@ -63,6 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     if (!isValid) {
+      successMessage.classList.add('d-none');
       return;
     }
 
@@ -70,10 +84,14 @@ document.addEventListener('DOMContentLoaded', () => {
     fields.forEach(({ input }) => {
       setFieldState(input, true, '');
     });
+
+    successMessage.textContent = 'Your request has been received. We will contact you shortly.';
+    successMessage.classList.remove('d-none');
   });
 
   fields.forEach(({ input, message }) => {
     input.addEventListener('input', () => {
+      successMessage.classList.add('d-none');
       validateField(input, message);
     });
 
