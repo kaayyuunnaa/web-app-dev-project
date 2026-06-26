@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     {
       input: document.getElementById('emailAddress'),
-      message: 'Please enter your email address.'
+      message: 'Please enter a valid email address.'
     },
     {
       input: document.getElementById('userMessage'),
@@ -39,7 +39,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const validateField = (input, message) => {
     const value = input.value.trim();
-    const isValid = value.length > 0;
+    let isValid = value.length > 0;
+
+    if (input.id === 'emailAddress' && value.length > 0) {
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      isValid = emailPattern.test(value);
+    }
+
     setFieldState(input, isValid, message);
     return isValid;
   };
