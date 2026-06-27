@@ -178,7 +178,84 @@ main {
   text-decoration: underline;
 }
 
-.form-control:focus {
+.form-control:focus,
+.form-select:focus {
   border-color: var(--color-accent);
   box-shadow: var(--focus-ring);
+}
+
+/* Base Transition Rules */
+body {
+  background-color: var(--color-background);
+  color: var(--color-text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.card, .hero-card, .service-card, .why-card, .testimonial-card {
+  transition: all 0.3s ease;
+}
+
+/* Dark Theme Overrides for Core Bootstrap Classes */
+[data-theme="dark"] body {
+  background-color: var(--color-background) !important;
+  color: var(--color-text) !important;
+}
+
+[data-theme="dark"] .bg-white,
+[data-theme="dark"] .bg-body {
+  background-color: var(--color-surface) !important;
+  color: var(--color-text) !important;
+}
+
+[data-theme="dark"] .bg-light {
+  background-color: var(--color-background) !important;
+  color: var(--color-text) !important;
+}
+
+[data-theme="dark"] .text-dark {
+  color: var(--color-text) !important;
+}
+
+[data-theme="dark"] .text-muted,
+[data-theme="dark"] .text-secondary {
+  color: var(--color-text-muted) !important;
+}
+
+[data-theme="dark"] .border,
+[data-theme="dark"] .border-bottom,
+[data-theme="dark"] .border-top {
+  border-color: var(--color-border) !important;
+}
+
+[data-theme="dark"] .card,
+[data-theme="dark"] .hero-card,
+[data-theme="dark"] .service-card,
+[data-theme="dark"] .why-card,
+[data-theme="dark"] .testimonial-card {
+  background-color: var(--color-surface) !important;
+  border-color: var(--color-border) !important;
+  color: var(--color-text) !important;
+}
+
+[data-theme="dark"] .navbar {
+  background-color: var(--color-footer) !important;
+  border-bottom: 1px solid var(--color-border) !important;
+}
+
+[data-theme="dark"] .site-footer {
+  background-color: var(--color-footer) !important;
+  border-top: 1px solid var(--color-border) !important;
+}
+
+[data-theme="dark"] input.form-control,
+[data-theme="dark"] select.form-select,
+[data-theme="dark"] textarea.form-control {
+  background-color: var(--color-surface) !important;
+  border-color: var(--color-border) !important;
+  color: var(--color-text) !important;
+}
+
+[data-theme="dark"] input.form-control::placeholder,
+[data-theme="dark"] textarea.form-control::placeholder {
+  color: var(--color-text-muted) !important;
 }
