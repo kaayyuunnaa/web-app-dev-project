@@ -42,7 +42,15 @@
       <p class="lead text-muted">A quick look at our treatment spaces, hygiene stations, and patient areas.</p>
     </div>
 
-    <section class="row g-4">
+    <!-- Gallery Filter Buttons -->
+    <div class="d-flex flex-wrap justify-content-center gap-2 mb-4" id="galleryFilters">
+      <button class="btn btn-primary filter-btn active" data-filter="all">All Photos</button>
+      <button class="btn btn-outline-primary filter-btn" data-filter="reception">Reception</button>
+      <button class="btn btn-outline-primary filter-btn" data-filter="treatment">Treatment Rooms</button>
+      <button class="btn btn-outline-primary filter-btn" data-filter="hygiene">Hygiene & Sterilization</button>
+    </div>
+
+    <section class="row g-4" id="galleryGrid">
       <div class="col-md-4">
         <div class="p-4 border rounded shadow-sm bg-white h-100">
           <img src="assets/images/reception-area.svg" class="img-fluid rounded mb-3" alt="Illustration of the BrightSmile reception area">
