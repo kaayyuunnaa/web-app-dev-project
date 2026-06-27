@@ -127,9 +127,11 @@ document.addEventListener('DOMContentLoaded', () => {
         filterButtons.forEach(b => {
           b.classList.remove('btn-primary', 'active');
           b.classList.add('btn-outline-primary');
+          b.setAttribute('aria-pressed', 'false');
         });
         btn.classList.add('btn-primary', 'active');
         btn.classList.remove('btn-outline-primary');
+        btn.setAttribute('aria-pressed', 'true');
 
         const filter = btn.getAttribute('data-filter');
         

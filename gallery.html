@@ -53,11 +53,11 @@
     </div>
 
     <!-- Gallery Filter Buttons -->
-    <div class="d-flex flex-wrap justify-content-center gap-2 mb-4" id="galleryFilters">
-      <button class="btn btn-primary filter-btn active" data-filter="all">All Photos</button>
-      <button class="btn btn-outline-primary filter-btn" data-filter="reception">Reception</button>
-      <button class="btn btn-outline-primary filter-btn" data-filter="treatment">Treatment Rooms</button>
-      <button class="btn btn-outline-primary filter-btn" data-filter="hygiene">Hygiene & Sterilization</button>
+    <div class="d-flex flex-wrap justify-content-center gap-2 mb-4" id="galleryFilters" role="group" aria-label="Gallery category filters">
+      <button class="btn btn-primary filter-btn active" data-filter="all" aria-pressed="true">All Photos</button>
+      <button class="btn btn-outline-primary filter-btn" data-filter="reception" aria-pressed="false">Reception</button>
+      <button class="btn btn-outline-primary filter-btn" data-filter="treatment" aria-pressed="false">Treatment Rooms</button>
+      <button class="btn btn-outline-primary filter-btn" data-filter="hygiene" aria-pressed="false">Hygiene & Sterilization</button>
     </div>
 
     <section class="row g-4" id="galleryGrid">
