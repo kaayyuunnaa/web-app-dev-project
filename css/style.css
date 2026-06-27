@@ -1,19 +1,27 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
 :root {
-  --color-primary: #0d6efd;
-  --color-primary-dark: #084298;
-  --color-accent: #0dcaf0;
-  --color-background: #f8f9fa;
-  --color-surface: #ffffff;
-  --color-text: #333333;
-  --color-text-muted: #6c757d;
-  --color-border: #dee2e6;
-  --color-footer: #212529;
+  /* Brand Colors */
+  --color-primary: #0f4c5c;        /* Deep Slate Teal */
+  --color-primary-rgb: 15, 76, 92;
+  --color-primary-dark: #0b3945;
+  --color-accent: #00a896;         /* Mint Teal */
+  --color-accent-rgb: 0, 168, 150;
+  
+  /* Theme-specific Colors (Light Theme Defaults) */
+  --color-background: #f8fafc;     /* Slate 50 */
+  --color-surface: #ffffff;        /* White card surface */
+  --color-text: #1e293b;           /* Slate 800 */
+  --color-text-muted: #64748b;     /* Slate 500 */
+  --color-border: #e2e8f0;         /* Slate 200 */
+  --color-footer: #0f172a;         /* Slate 900 */
+  --color-card-bg: #ffffff;
 
-  --primary-brand: #0d6efd;
-  --accent-brand: #0dcaf0;
+  --primary-brand: var(--color-primary);
+  --accent-brand: var(--color-accent);
 
-  --font-family-base: 'Arial', sans-serif;
+  --font-family-base: 'Plus Jakarta Sans', sans-serif;
 
   --spacing-xs: 0.25rem;
   --spacing-sm: 0.5rem;
@@ -25,7 +33,20 @@
   --radius-md: 0.5rem;
 
   --shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-  --focus-ring: 0 0 0 0.25rem rgba(13, 202, 240, 0.25);
+  --focus-ring: 0 0 0 0.25rem rgba(0, 168, 150, 0.25);
+}
+
+/* Dark Theme Variables */
+[data-theme="dark"] {
+  --color-background: #0b0f19;     /* Deep dark slate */
+  --color-surface: #111827;        /* Gray 900 surface */
+  --color-text: #f1f5f9;           /* Slate 100 */
+  --color-text-muted: #94a3b8;     /* Slate 400 */
+  --color-border: #1f2937;         /* Gray 800 border */
+  --color-card-bg: #1e293b;        /* Slate 800 cards */
+  --color-primary: #14b8a6;        /* Bright teal for dark mode branding */
+  --color-primary-dark: #0d9488;
+  --color-footer: #030712;         /* Pitch black */
 }
 
 body {
