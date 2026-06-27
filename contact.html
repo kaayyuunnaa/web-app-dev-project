@@ -52,46 +52,56 @@
       <p class="lead text-muted">Ready to schedule your visit? Send a booking request or call our clinic directly.</p>
     </div>
 
-    <div class="row g-5 mb-5">
-      <div class="col-lg-6">
-        <div class="p-4 bg-light rounded shadow-sm h-100">
-          <h2 class="h4 fw-bold mb-3 text-primary">Visit Our Clinic</h2>
-          <p class="text-muted">We are conveniently located in the heart of Nairobi’s medical district, making it easy for patients to reach us for routine care and urgent appointments.</p>
-          <div class="mt-4">
-            <h3 class="h6 fw-bold">Clinic Address</h3>
-            <p class="mb-2">452 Medical Arts Plaza, Suite B</p>
-            <p class="mb-0">Nairobi, Kenya</p>
-          </div>
-          <div class="mt-4">
-            <h3 class="h6 fw-bold">Office Hours</h3>
-            <p class="small text-muted mb-1">Monday - Friday: 8:00 AM – 6:00 PM</p>
-            <p class="small text-muted mb-0">Saturday: 9:00 AM – 3:00 PM</p>
-          </div>
-        </div>
-      </div>
-
+    <div class="row g-4 mb-5">
+      <!-- Contact Info Card -->
       <div class="col-lg-6">
         <div class="p-4 border rounded shadow-sm bg-white h-100">
-          <h2 class="h4 fw-bold mb-3 text-primary">Need Immediate Help?</h2>
-          <p class="text-muted">Our team is happy to assist with appointment questions, treatment concerns, and emergency follow-up planning.</p>
-          <ul class="list-unstyled mb-0">
-            <li class="mb-2"><strong>Phone:</strong> +254 712 345 678</li>
-            <li class="mb-2"><strong>Email:</strong> support@brightsmiledental.com</li>
-            <li><strong>Response Time:</strong> Usually within 1 business day</li>
-          </ul>
+          <h2 class="h4 fw-bold mb-3 text-primary">Clinic Location & Details</h2>
+          <p class="text-muted mb-4">We are conveniently located in the heart of Nairobi’s medical district, making it easy for patients to reach us for routine care and urgent appointments.</p>
+          
+          <div class="row g-3">
+            <div class="col-sm-6">
+              <h3 class="h6 fw-bold">Clinic Address</h3>
+              <p class="text-secondary mb-1">452 Medical Arts Plaza, Suite B</p>
+              <p class="text-secondary mb-0">Nairobi, Kenya</p>
+            </div>
+            <div class="col-sm-6">
+              <h3 class="h6 fw-bold">Office Hours</h3>
+              <p class="small text-secondary mb-1">Monday - Friday: 8:00 AM – 6:00 PM</p>
+              <p class="small text-secondary mb-0">Saturday: 9:00 AM – 3:00 PM</p>
+            </div>
+            <div class="col-sm-6 mt-2">
+              <h3 class="h6 fw-bold">Contact Numbers</h3>
+              <p class="text-secondary mb-1"><strong>Phone:</strong> +254 712 345 678</p>
+              <p class="text-secondary mb-0"><strong>WhatsApp:</strong> +254 700 123 456</p>
+            </div>
+            <div class="col-sm-6 mt-2">
+              <h3 class="h6 fw-bold">Patient Support</h3>
+              <p class="text-secondary mb-1">support@brightsmiledental.com</p>
+              <p class="small text-muted mb-0">Free patient parking is available on-site.</p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="row g-5">
-      <div class="col-lg-7">
-        <div class="p-4 border rounded shadow-sm bg-white mb-4">
+      <!-- Google Map Card -->
+      <div class="col-lg-6">
+        <div class="p-4 border rounded shadow-sm bg-white h-100">
           <h2 class="h4 fw-bold mb-3 text-primary">Find Us on the Map</h2>
           <div class="ratio ratio-16x9">
             <iframe src="https://www.google.com/maps?q=Nairobi%20Medical%20Arts%20Plaza&z=14&output=embed" title="BrightSmile Dental Center location map" allowfullscreen loading="lazy"></iframe>
           </div>
         </div>
+      </div>
+    </div>
+
+    <!-- Appointment Form (Centered) -->
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
         <form id="appointmentForm" class="p-4 border rounded shadow-sm bg-white" novalidate>
+          <h2 class="h4 fw-bold text-center mb-3 text-primary">Book Your Appointment</h2>
+          <p class="text-muted text-center mb-4">Fill out the form below to request a dental visit. Our patient care coordinator will contact you shortly to confirm your booking.</p>
+          
           <div class="mb-3">
             <label for="fullName" class="form-label fw-bold">Full Patient Name</label>
             <input type="text" class="form-control" id="fullName" placeholder="Jane Doe" required>
@@ -106,19 +116,6 @@
           </div>
           <button type="submit" class="btn btn-primary w-100 fw-bold py-2">Submit Request</button>
         </form>
-      </div>
-
-      <div class="col-lg-5">
-        <div class="p-4 bg-primary text-white rounded shadow-sm h-100">
-          <h2 class="h4 fw-bold mb-3">Contact Details</h2>
-          <p class="mb-3">Whether you need a general consultation or a specialist referral, our team is here to guide you.</p>
-          <ul class="list-unstyled mb-0">
-            <li class="mb-2"><strong>Phone:</strong> +254 712 345 678</li>
-            <li class="mb-2"><strong>Email:</strong> support@brightsmiledental.com</li>
-            <li class="mb-2"><strong>WhatsApp:</strong> +254 700 123 456</li>
-            <li><strong>Parking:</strong> Available on-site for patients</li>
-          </ul>
-        </div>
       </div>
     </div>
   </main>
