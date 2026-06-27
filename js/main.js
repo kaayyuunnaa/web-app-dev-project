@@ -99,4 +99,29 @@ document.addEventListener('DOMContentLoaded', () => {
       validateField(input, message);
     });
   });
+
+  // Theme Toggle Handler
+  const themeToggleBtn = document.getElementById('themeToggle');
+  if (themeToggleBtn) {
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    updateThemeButtonIcon(themeToggleBtn, savedTheme);
+
+    themeToggleBtn.addEventListener('click', () => {
+      const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      updateThemeButtonIcon(themeToggleBtn, newTheme);
+    });
+  }
+
+  function updateThemeButtonIcon(button, theme) {
+    const iconSpan = button.querySelector('.theme-icon');
+    if (iconSpan) {
+      iconSpan.textContent = theme === 'dark' ? '🌙' : '☀️';
+    }
+    button.classList.toggle('btn-outline-light', theme !== 'dark');
+    button.classList.toggle('btn-outline-warning', theme === 'dark');
+  }
 });
