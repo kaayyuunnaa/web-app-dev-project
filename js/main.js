@@ -187,6 +187,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Initialize Bootstrap Tooltips
+  const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+  const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+
   function updateThemeButtonIcon(button, theme) {
     const iconSpan = button.querySelector('.theme-icon');
     if (iconSpan) {
