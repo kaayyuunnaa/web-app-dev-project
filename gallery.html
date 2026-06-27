@@ -102,6 +102,19 @@
     </section>
   </main>
 
+  <!-- Image Lightbox Modal -->
+  <div class="modal fade" id="lightboxModal" tabindex="-1" aria-labelledby="lightboxModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content bg-transparent border-0">
+        <div class="modal-body p-0 text-center position-relative">
+          <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Close"></button>
+          <img src="" id="lightboxImage" class="img-fluid rounded shadow-lg" alt="Expanded clinic gallery image">
+          <div class="text-white mt-2 p-2 bg-dark bg-opacity-75 rounded d-inline-block" id="lightboxCaption">Caption text</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <footer class="site-footer py-4 mt-auto text-white-50 border-top">
     <div class="container">
       <div class="row g-4 align-items-start">
