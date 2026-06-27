@@ -137,8 +137,17 @@ document.addEventListener('DOMContentLoaded', () => {
           const category = item.getAttribute('data-category');
           if (filter === 'all' || category === filter) {
             item.style.display = 'block';
+            // Force reflow to ensure display block takes effect before fade-in transition
+            item.offsetHeight;
+            item.classList.remove('fade-out');
           } else {
-            item.style.display = 'none';
+            item.classList.add('fade-out');
+            // Wait for scale/opacity transition before removing from layout flow
+            setTimeout(() => {
+              if (item.classList.contains('fade-out')) {
+                item.style.display = 'none';
+              }
+            }, 300);
           }
         });
       });
