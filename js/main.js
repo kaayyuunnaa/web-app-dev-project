@@ -193,6 +193,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
   const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
 
+  /**
+   * Helper function to update the theme toggle button's icon and styling classes.
+   * @param {HTMLButtonElement} button - The button element trigger.
+   * @param {string} theme - The target theme value ('light' or 'dark').
+   */
   function updateThemeButtonIcon(button, theme) {
     const iconSpan = button.querySelector('.theme-icon');
     if (iconSpan) {
