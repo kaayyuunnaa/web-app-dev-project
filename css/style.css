@@ -291,3 +291,10 @@ body {
     font-size: 0.9rem;
   }
 }
+
+/* Ensure all gallery grid images render at the exact same size and aspect ratio */
+.gallery-img {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  width: 100%;
+}
