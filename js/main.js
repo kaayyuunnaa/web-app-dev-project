@@ -154,6 +154,39 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Lightbox Modal Logic
+  const galleryImages = document.querySelectorAll('.gallery-img');
+  const lightboxModalEl = document.getElementById('lightboxModal');
+
+  if (galleryImages.length > 0 && lightboxModalEl) {
+    const lightboxModal = new bootstrap.Modal(lightboxModalEl);
+    const lightboxImage = document.getElementById('lightboxImage');
+    const lightboxCaption = document.getElementById('lightboxCaption');
+
+    galleryImages.forEach(img => {
+      img.style.cursor = 'pointer';
+      
+      img.addEventListener('click', () => {
+        const src = img.getAttribute('src');
+        const alt = img.getAttribute('alt');
+        
+        // Find caption from sibling heading
+        const cardBody = img.closest('.p-4');
+        const titleText = cardBody ? cardBody.querySelector('h2').textContent : '';
+
+        if (lightboxImage) {
+          lightboxImage.setAttribute('src', src);
+          lightboxImage.setAttribute('alt', alt);
+        }
+        if (lightboxCaption) {
+          lightboxCaption.textContent = titleText;
+        }
+        
+        lightboxModal.show();
+      });
+    });
+  }
+
   function updateThemeButtonIcon(button, theme) {
     const iconSpan = button.querySelector('.theme-icon');
     if (iconSpan) {
