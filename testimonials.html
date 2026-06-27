@@ -86,6 +86,43 @@
         </div>
       </div>
     </section>
+
+    <!-- Testimonial Submission Form -->
+    <section class="mt-5 mx-auto" style="max-width: 600px;">
+      <div class="p-4 border rounded shadow-sm bg-white">
+        <h2 class="h4 fw-bold text-center mb-3">Share Your Smile Story</h2>
+        <p class="text-muted text-center mb-4">Your feedback helps us continuously improve our patient experience.</p>
+        <form id="testimonialForm" novalidate>
+          <div class="mb-3">
+            <label for="patientName" class="form-label fw-bold">Full Name</label>
+            <input type="text" class="form-control" id="patientName" placeholder="e.g. Jane Doe" required>
+          </div>
+          <div class="mb-3">
+            <label for="patientRole" class="form-label fw-bold">Patient Type / Category</label>
+            <select class="form-select" id="patientRole" required>
+              <option value="" disabled selected>Select category...</option>
+              <option value="General Dentistry Patient">General Dentistry Patient</option>
+              <option value="Cosmetic Dentistry Patient">Cosmetic Dentistry Patient</option>
+              <option value="Orthodontic Patient">Orthodontic Patient</option>
+              <option value="Pediatric Parent">Pediatric Parent (Family Care)</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="ratingValue" class="form-label fw-bold">Rating</label>
+            <select class="form-select" id="ratingValue" required>
+              <option value="5">★★★★★ (5 Stars)</option>
+              <option value="4">★★★★☆ (4 Stars)</option>
+              <option value="3">★★★☆☆ (3 Stars)</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="testimonialText" class="form-label fw-bold">Your Review</label>
+            <textarea class="form-control" id="testimonialText" rows="4" placeholder="Describe your visit, treatment comfort, and interaction with our staff..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary w-100 fw-bold py-2">Submit Testimonial</button>
+        </form>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer py-4 mt-auto text-white-50 border-top">
