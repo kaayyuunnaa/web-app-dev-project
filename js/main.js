@@ -116,6 +116,35 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Gallery Filter Logic
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const galleryItems = document.querySelectorAll('.gallery-item');
+
+  if (filterButtons.length > 0 && galleryItems.length > 0) {
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Toggle active button style
+        filterButtons.forEach(b => {
+          b.classList.remove('btn-primary', 'active');
+          b.classList.add('btn-outline-primary');
+        });
+        btn.classList.add('btn-primary', 'active');
+        btn.classList.remove('btn-outline-primary');
+
+        const filter = btn.getAttribute('data-filter');
+        
+        galleryItems.forEach(item => {
+          const category = item.getAttribute('data-category');
+          if (filter === 'all' || category === filter) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+  }
+
   function updateThemeButtonIcon(button, theme) {
     const iconSpan = button.querySelector('.theme-icon');
     if (iconSpan) {
