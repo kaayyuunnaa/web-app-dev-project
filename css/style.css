@@ -6,6 +6,7 @@
   --color-primary: #0f4c5c;        /* Deep Slate Teal */
   --color-primary-rgb: 15, 76, 92;
   --color-primary-dark: #0b3945;
+  --color-primary-light: #18728a;
   --color-accent: #00a896;         /* Mint Teal */
   --color-accent-rgb: 0, 168, 150;
   
@@ -46,6 +47,7 @@
   --color-card-bg: #1e293b;        /* Slate 800 cards */
   --color-primary: #14b8a6;        /* Bright teal for dark mode branding */
   --color-primary-dark: #0d9488;
+  --color-primary-light: #2dd4bf;
   --color-footer: #030712;         /* Pitch black */
 }
 
@@ -222,7 +224,7 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.card, .hero-card, .service-card, .why-card, .testimonial-card {
+.card, .hero-card, .service-card, .why-card, .testimonial-card, .blog-card {
   transition: all 0.3s ease;
 }
 
@@ -262,7 +264,8 @@ body {
 [data-theme="dark"] .hero-card,
 [data-theme="dark"] .service-card,
 [data-theme="dark"] .why-card,
-[data-theme="dark"] .testimonial-card {
+[data-theme="dark"] .testimonial-card,
+[data-theme="dark"] .blog-card {
   background-color: var(--color-surface) !important;
   border-color: var(--color-border) !important;
   color: var(--color-text) !important;
@@ -271,6 +274,22 @@ body {
 [data-theme="dark"] .navbar {
   background-color: var(--color-footer) !important;
   border-bottom: 1px solid var(--color-border) !important;
+}
+
+/* Blog Card Hover Animations */
+.blog-card {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(13, 110, 253, 0.08);
+  border-color: var(--color-accent);
+}
+
+[data-theme="dark"] .blog-card:hover {
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4) !important;
+  border-color: var(--color-primary) !important;
 }
 
 [data-theme="dark"] .site-footer {
@@ -344,3 +363,73 @@ body {
   border-bottom: 1px solid var(--color-border) !important;
   box-shadow: none !important;
 }
+
+/* --- PREMIUM UI POLISH OVERRIDES --- */
+
+/* Align Bootstrap Primary variables to customized branding color */
+.bg-primary {
+  background-color: var(--color-primary) !important;
+}
+
+.btn-primary {
+  background-color: var(--color-primary) !important;
+  border-color: var(--color-primary) !important;
+}
+
+.btn-primary:hover, 
+.btn-primary:focus, 
+.btn-primary:active {
+  background-color: var(--color-primary-dark) !important;
+  border-color: var(--color-primary-dark) !important;
+}
+
+.btn-outline-primary {
+  color: var(--color-primary) !important;
+  border-color: var(--color-primary) !important;
+}
+
+.btn-outline-primary:hover, 
+.btn-outline-primary:focus, 
+.btn-outline-primary:active {
+  background-color: var(--color-primary) !important;
+  color: #ffffff !important;
+}
+
+.text-primary {
+  color: var(--color-primary) !important;
+}
+
+/* Rounded and Sleeker Inputs/Buttons */
+.btn {
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: all 0.2s ease-in-out;
+}
+
+.form-control, .form-select {
+  border-radius: 0.5rem;
+}
+
+/* Active navigation item indicator underline */
+.navbar-nav .nav-link {
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.navbar-nav .nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0.5rem;
+  right: 0.5rem;
+  height: 3px;
+  background-color: var(--color-accent);
+  border-radius: 99px;
+}
+
+@media (max-width: 991px) {
+  .navbar-nav .nav-link.active::after {
+    display: none;
+  }
+}
+
