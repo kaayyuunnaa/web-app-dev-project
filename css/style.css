@@ -152,17 +152,10 @@ main {
   box-shadow: var(--shadow-sm);
 }
 
-.brand-mark {
-  align-items: center;
-  background-color: var(--color-surface);
-  border-radius: 50%;
-  color: var(--color-primary);
-  display: inline-flex;
-  font-size: 0.8rem;
-  height: 2rem;
-  justify-content: center;
-  margin-right: var(--spacing-sm);
-  width: 2rem;
+.brand-logo {
+  height: 35px;
+  width: auto;
+  filter: brightness(0) invert(1);
 }
 
 .site-footer {
