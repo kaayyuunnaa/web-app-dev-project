@@ -64,8 +64,22 @@ main {
   flex: 1; 
 }
 
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
 .hero-section {
-  background: linear-gradient(135deg, #f8fbff 0%, #eef6ff 100%);
+  background: linear-gradient(-45deg, #f0f7ff, #e6f0fa, #e1f5fe, #e0f2f1);
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite;
+}
+
+[data-theme="dark"] .hero-section {
+  background: linear-gradient(-45deg, #101c2d, #0b1a2d, #061524, #08171f) !important;
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite;
 }
 
 .hero-badge {
@@ -124,6 +138,18 @@ main {
   border-radius: 1rem;
   padding: 1.5rem;
   box-shadow: var(--shadow-sm);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(13, 110, 253, 0.08);
+  border-color: var(--color-primary-light);
+}
+
+[data-theme="dark"] .service-card:hover {
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4) !important;
+  border-color: var(--color-primary) !important;
 }
 
 .service-icon {
@@ -145,11 +171,21 @@ main {
 }
 
 .why-card {
-  background: linear-gradient(135deg, #f7fbff 0%, #eef6ff 100%);
+  background: linear-gradient(135deg, #f0f7ff 0%, #e1f0fe 100%);
   border: 1px solid var(--color-border);
-  border-radius: 1rem;
-  padding: 1.5rem;
+  border-radius: 1.25rem;
+  padding: 2rem;
   box-shadow: var(--shadow-sm);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+}
+
+.why-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(13, 110, 253, 0.06);
+}
+
+[data-theme="dark"] .why-card {
+  background: linear-gradient(135deg, #0f1c30 0%, #081220 100%) !important;
 }
 
 .brand-logo {
@@ -290,4 +326,21 @@ body {
   aspect-ratio: 4 / 3;
   object-fit: cover;
   width: 100%;
+}
+
+/* Premium Inner Page Header Banner */
+.inner-page-header {
+  background: linear-gradient(-45deg, #f0f7ff, #e3f2fd, #e0f7fa);
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite;
+  border-bottom: 1px solid var(--color-border);
+  padding: 3rem 0;
+  margin-bottom: 3.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+[data-theme="dark"] .inner-page-header {
+  background: linear-gradient(-45deg, #0c1524, #0f1c2d, #071220) !important;
+  border-bottom: 1px solid var(--color-border) !important;
+  box-shadow: none !important;
 }
